@@ -17,5 +17,8 @@ object JavaScript_03DeployToStaging : BuildType({
         snapshot(JavaScript_02Firefox) {
             reuseBuilds = ReuseBuilds.NO
         }
+		snapshot(JavaScript_02IE) {
+            reuseBuilds = ReuseBuilds.NO
+        }
     }
 })
