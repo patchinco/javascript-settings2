@@ -2,7 +2,6 @@ package JavaScript.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object JavaScript_Template : Template({
     uuid = "eccbd56f-b375-40ad-a9ad-b1281a518f4b"
@@ -23,12 +22,5 @@ object JavaScript_Template : Template({
             id = "RUNNER_7"
             scriptContent = "npm test -- --single-run --browsers %Browser% --colors false --reporters teamcity"
         }
-    }
-
-    triggers {
-        vcs {
-            id = "vcsTrigger"
-            branchFilter = ""
-        }
-    }
+    }    
 })

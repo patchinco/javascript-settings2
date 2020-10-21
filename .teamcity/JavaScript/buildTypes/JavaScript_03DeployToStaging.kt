@@ -1,6 +1,7 @@
 package JavaScript.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object JavaScript_03DeployToStaging : BuildType({
     uuid = "2cef2f34-f9dd-4bd8-871d-a4afc592772f"
@@ -19,6 +20,13 @@ object JavaScript_03DeployToStaging : BuildType({
         }
 		snapshot(JavaScript_02IE) {
             reuseBuilds = ReuseBuilds.NO
+        }
+    }
+
+    triggers {
+        vcs {
+            id = "vcsTrigger"
+            branchFilter = ""
         }
     }
 })
